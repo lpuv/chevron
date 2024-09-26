@@ -9,7 +9,7 @@ import classes from './AIcompletion.module.css'
 function getAiConfigMessage(language) {
   let config = {
     role: 'system', 
-    content: 'You are ChatGPT, a large language model trained by OpenAI. \nKnowledge cutoff: 2021-09'
+    content: 'You are ChatGPT, a large language model trained by OpenAI. \nKnowledge cutoff: 2023-10. \nPlease use $$ when doing LaTeX.'
   }
 
   // specify current date and time
@@ -51,13 +51,19 @@ function AIcompletion({ query, className }) {
         apiKey
       )
       completionRequest.promise
-      .then(result => chatLogRef.current.push(currentQuery, result))
+      .then(result => {
+        chatLogRef.current.push(currentQuery, result)
+        window.MathJax.typeset()
+      })
       .catch(error => setCompletion(`## ⚠️  ${error.code || 'error'} \n \`\`\`${error.message || 'No description available ☹️'}\`\`\``))
 
       controller = completionRequest.controller
     }
-    else
+    else {
       setCompletion('')
+    }
+    
+    // window.MathJax.typeset()
 
     return () => controller && controller.abort()
   }, [query, temperature, apiKey, enabled, language])
