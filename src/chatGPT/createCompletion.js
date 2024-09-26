@@ -1,6 +1,6 @@
 const API_URL = 'https://api.openai.com/v1/chat/completions'
 const PARAMS = {
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4o-mini',
     temperature: 0.4,
     stream: true,
     // max_tokens: 4096,
