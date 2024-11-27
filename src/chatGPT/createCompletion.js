@@ -18,7 +18,8 @@ function createCompletion(stateSetter, messages, temperature, key) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + String(key)
+            'Authorization': 'Bearer ' + String(key),
+            'X-Title': 'Chevron'
         },
         body: JSON.stringify({ ...PARAMS, messages, temperature })
       })
