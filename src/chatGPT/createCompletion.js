@@ -19,7 +19,8 @@ function createCompletion(stateSetter, messages, temperature, key) {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + String(key),
-            'X-Title': 'Chevron'
+            'X-Title': 'Chevron',
+            'HTTP-Referer': 'https://github.com/lpuv/chevron/'
         },
         body: JSON.stringify({ ...PARAMS, messages, temperature })
       })
