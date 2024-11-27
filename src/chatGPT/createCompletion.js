@@ -1,4 +1,4 @@
-const API_URL = 'https://api.openai.com/v1/chat/completions'
+const API_URL = 'https://openrouter.ai/api/v1/chat/completions'
 const PARAMS = {
     model: 'gpt-4o-mini',
     temperature: 0.4,

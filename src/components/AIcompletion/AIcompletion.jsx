@@ -9,7 +9,7 @@ import classes from './AIcompletion.module.css'
 function getAiConfigMessage(language) {
   let config = {
     role: 'system', 
-    content: 'You are ChatGPT, a large language model trained by OpenAI. \nKnowledge cutoff: 2023-10. \nPlease use $$ when doing LaTeX.'
+    content: 'You are a helpful AI language assistant. Please use $$ when doing LaTeX.'
   }
 
   // specify current date and time
