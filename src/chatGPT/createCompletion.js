@@ -1,6 +1,6 @@
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions'
 const PARAMS = {
-    model: 'gpt-4.1-mini',
+    model: 'gpt-4.1',
     temperature: 0.4,
     stream: true,
     // max_tokens: 4096,
